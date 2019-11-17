@@ -21,7 +21,7 @@
 pub trait IntoOption where Self: Sized {
     /// Returns Some(self) if predicate returns true on self, None otherwise.
     fn some_if<P>(self, predicate: P) -> Option<Self>
-    where P: Fn(&Self) -> bool {
+    where P: FnOnce(&Self) -> bool {
         if predicate(&self) {
             Some(self)
         } else {
@@ -30,7 +30,7 @@ pub trait IntoOption where Self: Sized {
     }
     /// Returns None if predicate returns true on self, Some(self) otherwise.
     fn none_if<P>(self, predicate: P) -> Option<Self>
-    where P: Fn(&Self) -> bool {
+    where P: FnOnce(&Self) -> bool {
         if predicate(&self) {
             None
         } else {
@@ -43,7 +43,7 @@ pub trait IntoOption where Self: Sized {
 pub trait IntoResult where Self: Sized {
     /// Returns Ok(self) if predicate returns true on self, Err(error) otherwise.
     fn ok_if<P, E>(self, predicate: P, error: E) -> Result<Self, E>
-    where P: Fn(&Self) -> bool {
+    where P: FnOnce(&Self) -> bool {
         if predicate(&self) {
             Ok(self)
         } else {
@@ -52,7 +52,7 @@ pub trait IntoResult where Self: Sized {
     }
     /// Returns Err(error) if predicate returns true on self, Ok(self) otherwise.
     fn err_if<P, E>(self, predicate: P, error: E) -> Result<Self, E>
-    where P: Fn(&Self) -> bool {
+    where P: FnOnce(&Self) -> bool {
         if predicate(&self) {
             Err(error)
         } else {
