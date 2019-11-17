@@ -1,4 +1,4 @@
-# into-option
+# intoif
 This library provides two convenient traits that allow you to convert values into option or result
 based on the provided predicate. It is somewhat similar to the boolinator crate, except you don't
 need to create a boolean - the predicate will do it for you. This can be useful e.g. when writing a
