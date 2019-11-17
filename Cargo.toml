@@ -1,5 +1,11 @@
 [package]
 name = "intoif"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["Valerii Praid <valerii.praid@gmail.com>"]
 edition = "2018"
+
+description = "A small library for construction of an Option and Result from any type based on some user-specified condition."
+repository = "https://github.com/vpraid/intoif"
+readme = "README.md"
+keywords = ["chaining", "combinator", "option", "result"]
+license = "MIT"
