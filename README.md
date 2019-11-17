@@ -6,11 +6,12 @@ long chain that ends with a fold which you want to convert into Option or Result
 
 ```rust
 use intoif::IntoOption;
+use boolinator::Boolinator;
 
 fn fizz_buzz(n: u32) -> String {
     [(3, "Fizz"), (5, "Buzz")]
         .iter()
-        .filter_map(|(x, s)| if n % x == 0 { Some(*s) } else { None })
+        .filter_map(|(x, s)| (n % x == 0).as_some(*s))
         .collect::<String>()
         .none_if(String::is_empty)
         .unwrap_or_else(|| n.to_string())
