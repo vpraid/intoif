@@ -1,4 +1,4 @@
-use into_option::IntoResult;
+use intoif::IntoResult;
 
 #[test]
 fn ok_on_zero() {

@@ -1,4 +1,4 @@
-use into_option::IntoOption;
+use intoif::IntoOption;
 
 #[test]
 fn some_on_zero() {
