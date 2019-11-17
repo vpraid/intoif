@@ -5,6 +5,7 @@
 //!
 //! ```
 //! use intoif::IntoOption;
+//!
 //! fn fizz_buzz(n: u32) -> String {
 //!     [(3, "Fizz"), (5, "Buzz")]
 //!         .iter()
